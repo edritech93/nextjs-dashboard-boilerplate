@@ -3,8 +3,8 @@ import { useRouter } from "next/router";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+// @mui/material components
+import { makeStyles } from "@mui/material/styles";
 // core components
 import Navbar from "components/Navbars/Navbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -13,14 +13,14 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
-import styles from "assets/jss/nextjs-material-dashboard/layouts/rtlStyle.js";
+import styles from "assets/jss/nextjs-material-dashboard/layouts/adminStyle.js";
 
 import bgImage from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
 
 let ps;
 
-export default function RTL({ children, ...rest }) {
+export default function Admin({ children, ...rest }) {
   // used for checking current route
   const router = useRouter();
   // styles
@@ -79,20 +79,18 @@ export default function RTL({ children, ...rest }) {
     <div className={classes.wrapper}>
       <Sidebar
         routes={routes}
-        logoText={"الإبداعية تيم"}
+        logoText={"Creative Tim"}
         logo={logo}
         image={image}
         handleDrawerToggle={handleDrawerToggle}
         open={mobileOpen}
         color={color}
-        rtlActive
         {...rest}
       />
       <div className={classes.mainPanel} ref={mainPanel}>
         <Navbar
           routes={routes}
           handleDrawerToggle={handleDrawerToggle}
-          rtlActive
           {...rest}
         />
         {/* On the /maps route we want the map to be on full screen - this is not possible if the content and conatiner classes are present because they have some paddings which would make the map smaller */}
@@ -111,7 +109,6 @@ export default function RTL({ children, ...rest }) {
           bgImage={image}
           handleFixedClick={handleFixedClick}
           fixedClasses={fixedClasses}
-          rtlActive
         />
       </div>
     </div>

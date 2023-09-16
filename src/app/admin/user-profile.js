@@ -1,7 +1,7 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
+// @mui/material components
+import { makeStyles } from "@mui/material/styles";
+import InputLabel from "@mui/material/InputLabel";
 // layout for this page
 import Admin from "layouts/Admin.js";
 // core components
